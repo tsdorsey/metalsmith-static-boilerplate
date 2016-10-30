@@ -1,0 +1,68 @@
+// Sizes pulled from Google Chrome dev tools.
+$width-mobile-medium: 321px;
+$width-mobile-large: 376px;
+$width-tablet: 426px;
+$width-tablet-large: 600px;
+$width-laptop: 769px;
+$width-laptop-large: 1025px;
+$width-desktop: 1441px;
+
+@mixin mobile-medium {
+  @media (min-width: #{$width-mobile-medium}) {
+    @content;
+  }
+}
+
+@mixin mobile-large {
+  @media (min-width: #{$width-mobile-large}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$width-tablet}) {
+    @content;
+  }
+}
+
+@mixin tablet-large {
+  @media (min-width: #{$width-tablet-large}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$width-laptop}) {
+    @content;
+  }
+}
+
+@mixin laptop-large {
+  @media (min-width: #{$width-laptop-large}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$width-desktop}) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+@mixin print {
+  @media print {
+    @content;
+  }
+}
