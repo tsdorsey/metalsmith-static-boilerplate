@@ -30,7 +30,7 @@
     "metalsmith-clean-css": "5.0.1",
     "metalsmith-html-minifier": "2.2.0",
     "metalsmith-ignore": "0.1.2",
-    "metalsmith-in-place": "2.0.1",
+    "metalsmith-in-place": "1.4.4",
     "metalsmith-inline-svg": "0.1.4",
     "metalsmith-layouts": "1.8.0",
     "metalsmith-move-up": "1.0.0",
