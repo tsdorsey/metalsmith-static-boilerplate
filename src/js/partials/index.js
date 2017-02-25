@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var footer = require('./sections/footer');
 var sample = require('./sections/sample');
@@ -8,4 +8,4 @@ function initialize() {
   sample.initialize();
 }
 
-module.exports = {initialize};
+module.exports = { initialize };

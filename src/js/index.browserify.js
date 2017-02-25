@@ -1,1 +1,1 @@
-module.exports = { entries: [__dirname + '/index.js'] }
+module.exports = { entries: [__dirname + '/index.js'] };

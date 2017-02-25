@@ -12,16 +12,20 @@ then
 fi
 
 # Create html file
-echo "{{#> blocks/section id=\"$name\"}}
+mkdir -p src_partials/sections;
+echo "{{#>blocks/section name=\"$name\"}}
 
 <h1>$name</h1>
 
 {{/blocks/section}}" > "src_partials/sections/$name.html";
 
 # Create js file
-echo "function initialize() {
-  var scope = \$('#$name-section');
-  if(scope.length === 0) {
+mkdir -p src/js/partials/sections;
+echo "\"use strict\";
+
+function initialize() {
+  const \$scope = \$('.section.$name');
+  if(\$scope.length === 0) {
     return;
   }
 
@@ -31,7 +35,8 @@ echo "function initialize() {
 module.exports = {initialize};" > "src/js/partials/sections/$name.js";
 
 # Create css file
-echo "#$name-section {
+mkdir -p src/css/partials/sections;
+echo ".section.$name {
   .container {
   }
 
@@ -41,11 +46,9 @@ echo "#$name-section {
 
 
 # Add require line to index.js
-echo "
-// var $ccName = require('./sections/$name');
-// $ccName.initialize();" >> "src/js/partials/index.js";
+echo "// const $ccName = require('./sections/$name') /////;
+// $ccName.initialize();" >> "src/js/partials/index.js /////";
 
 
 # Add import line to index.scss file
-echo "
-// @import 'partials/sections/$name';" >> "src/css/index.scss";
+echo "// @import 'partials/sections/$name';" >> "src/css/index.scss /////";

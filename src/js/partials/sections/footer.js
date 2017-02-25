@@ -1,10 +1,12 @@
+'use strict';
+
 function initialize() {
-  var scope = $('#footer-section');
-  if(scope.length === 0) {
+  const $scope = $('.section.footer');
+  if ($scope.length === 0) {
     return;
   }
 
-  console.log('footer js');
+  console.log('footer section js');
 }
 
-module.exports = {initialize};
+module.exports = { initialize };

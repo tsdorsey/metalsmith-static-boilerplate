@@ -1,10 +1,12 @@
+'use strict';
+
 function initialize() {
-  var scope = $('#sample-section');
-  if(scope.length === 0) {
+  const $scope = $('.section.sample');
+  if ($scope.length === 0) {
     return;
   }
 
   console.log('sample section js');
 }
 
-module.exports = {initialize};
+module.exports = { initialize };

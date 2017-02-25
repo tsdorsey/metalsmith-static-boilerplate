@@ -1,9 +1,7 @@
-"use strict";
+'use strict';
 
 var partials = require('./partials');
-var pages = require('./pages');
 
-$(window).ready(function () {
+$(window).ready(function() {
   partials.initialize();
-  pages.initialize();
 });

@@ -1,12 +1,10 @@
 @import 'bourbon';
 @import 'reset';
 @import 'breakpoints';
-@import 'mixins';
-@import 'fonts';
 @import 'variables';
+@import 'fonts';
+@import 'mixins';
 @import 'base';
 
 @import 'partials/sections/footer';
 @import 'partials/sections/sample';
-
-@import 'pages/home';

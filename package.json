@@ -2,28 +2,30 @@
   "name": "metalsmith-static-boilerplate",
   "scripts": {
     "start": "npm run servedev",
-    "builddev": "NODE_ENV=development npm run build",
+    "builddev": "NODE_ENV=development DEBUG=metalsmith* npm run build",
     "buildprod": "NODE_ENV=production npm run build",
-    "servedev": "npm run reset && NODE_ENV=development npm run serve",
-    "serveprod": "npm run reset && NODE_ENV=production npm run serve",
+    "servedev": "NODE_ENV=development DEBUG=metalsmith* npm run serve",
+    "serveprod": "NODE_ENV=production npm run serve",
     "build": "node build.js",
     "serve": "npm run browser_sync & nodemon --exec 'npm run build && browser-sync reload'",
-    "browser_sync": "browser-sync --no-notify start --server build --browser=chrome",
-    "reset": "ps aux | grep -E '([b]rowser-sync)|([n]odemon)' | awk '{print $2}' | while read line ; do kill -9 $line ; done"
+    "browser_sync": "browser-sync --no-notify start --server build"
   },
-  "author": "Trevor Dorsey <tsdorsey@gmail.com> (http://foyyay.com)",
+  "author": "Trevor Dorsey <trevor@foyyay.com> (http://www.foyyay.com)",
   "repository": {
     "type": "git",
     "url": "git@github.com:tsdorsey/metalsmith-static-boilerplate.git"
   },
-  "license": "MIT",
+  "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "babel-cli": "6.18.0",
+    "babel-preset-es2015": "6.18.0",
     "bourbon": "4.2.7",
     "browserify": "13.1.1",
-    "handlebars": "4.0.5",
+    "handlebars": "4.0.6",
     "metalsmith": "2.2.2",
     "metalsmith-autoprefixer": "1.1.1",
+    "metalsmith-babel": "4.1.0",
     "metalsmith-browserify-alt": "1.0.1",
     "metalsmith-clean-css": "5.0.0",
     "metalsmith-html-minifier": "2.2.0",
@@ -36,7 +38,8 @@
     "metalsmith-robots": "1.0.1",
     "metalsmith-sass": "1.3.0",
     "metalsmith-sitemap": "1.1.0",
-    "metalsmith-uglifyjs": "0.2.1"
+    "metalsmith-timer": "0.0.2",
+    "metalsmith-uglify": "1.5.1"
   },
   "devDependencies": {
     "browser-sync": "2.17.5",

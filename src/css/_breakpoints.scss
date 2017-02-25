@@ -1,68 +1,29 @@
-// Sizes pulled from Google Chrome dev tools.
-$width-mobile-medium: 321px;
-$width-mobile-large: 376px;
-$width-tablet: 426px;
-$width-tablet-large: 600px;
-$width-laptop: 769px;
-$width-laptop-large: 1025px;
-$width-desktop: 1441px;
+// Inspired by https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862#.8frm9k9ux
 
-@mixin mobile-medium {
-  @media (min-width: #{$width-mobile-medium}) {
-    @content;
-  }
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
 }
-
-@mixin mobile-large {
-  @media (min-width: #{$width-mobile-large}) {
-    @content;
-  }
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
 }
-
-@mixin tablet {
-  @media (min-width: #{$width-tablet}) {
-    @content;
-  }
+@mixin for-tablet-portrait-only {
+  @media (min-width: 600px) and (max-width: 899px) { @content; }
 }
-
-@mixin tablet-large {
-  @media (min-width: #{$width-tablet-large}) {
-    @content;
-  }
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
 }
-
-@mixin laptop {
-  @media (min-width: #{$width-laptop}) {
-    @content;
-  }
+@mixin for-tablet-landscape-only {
+  @media (min-width: 900px) and (max-width: 1199px) { @content; }
 }
-
-@mixin laptop-large {
-  @media (min-width: #{$width-laptop-large}) {
-    @content;
-  }
+@mixin for-tablet-only {
+  @media (min-width: 600px) and (max-width: 1199px) { @content; }
 }
-
-@mixin desktop {
-  @media (min-width: #{$width-desktop}) {
-    @content;
-  }
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
 }
-
-@mixin retina {
-  @media
-    only screen and (-webkit-min-device-pixel-ratio: 2),
-    only screen and (min--moz-device-pixel-ratio: 2),
-    only screen and (-o-min-device-pixel-ratio: 2/1),
-    only screen and (min-device-pixel-ratio: 2),
-    only screen and (min-resolution: 192dpi),
-    only screen and (min-resolution: 2dppx) {
-    @content;
-  }
+@mixin for-desktop-only {
+  @media (min-width: 1200px) and (max-width: 1799px) { @content; }
 }
-
-@mixin print {
-  @media print {
-    @content;
-  }
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
 }

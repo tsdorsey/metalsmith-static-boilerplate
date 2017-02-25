@@ -28,6 +28,14 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+/* iOS Safari input style reset */
+textarea,
+input,
+button {
+     -webkit-appearance: none;
+     border-radius: 0;
+     border: none;
+}
 body {
 	line-height: 1;
 }

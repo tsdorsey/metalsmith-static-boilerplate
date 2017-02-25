@@ -1,24 +1,26 @@
 <!doctype html>
-<html>
+<html lang="en-US">
 
   <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>{{title}}</title>
     <link rel="stylesheet" href="/css/index.css">
+    {{>blocks/layouts/favicons}}
+    {{>blocks/layouts/meta}}
   </head>
 
-  <body class="page-named-{{pageName}}" data-page-name="{{pageName}}">
+  <body class="page {{pageName}} logged-out">
 
-    <div id="page-wrapper">
-      <main id="page-contents-{{pageName}}">
+    <div class="page-wrapper">
+      <main class="page-contents">
         {{{contents}}}
       </main>
-
-      {{>sections/footer}}
     </div>
 
-    <script defer src="/js/vendor/jquery-3.1.1.slim.min.js"></script>
-    <script defer src="/js/index.js"></script>
+    {{>blocks/layouts/javascript}}
+    {{>blocks/layouts/ga_code}}
+
   </body>
 
 </html>
